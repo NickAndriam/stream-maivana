@@ -1,0 +1,50 @@
+[
+  {
+    "adult": false,
+    "backdrop_path": "/assets/img/1.jpg",
+    "genre_ids": [12, 14, 28],
+    "id": 458576,
+    "original_language": "en",
+    "original_title": "The King's Man",
+    "overview": "As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them. Discover the origins of the very first independent intelligence agency in The King's Man.",
+    "popularity": 2348.914,
+    "poster_path": "uj5vZmI5NLm8xYZvBM7gkXJt4k6.jpg",
+    "release_date": "2021-12-22",
+    "title": "The King's Man",
+    "video": false,
+    "vote_average": 6.5,
+    "vote_count": 100
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/r2GAjd4rNOHJhWU1EyCT7GyRrGd.jpg",
+    "genre_ids": [28, 12, 14],
+    "id": 634649,
+    "original_language": "en",
+    "original_title": "Spider-Man: No Way Home",
+    "overview": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a Super Hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+    "popularity": 2238.849,
+    "poster_path": "/assets/img/2.jpg",
+    "release_date": "2021-12-15",
+    "title": "Spider-Man: No Way Home",
+    "video": false,
+    "vote_average": 8.1,
+    "vote_count": 2500
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/aQvJ5WPzZgYVQAvVSaVA7kmA9xF.jpg",
+    "genre_ids": [10751, 16, 12],
+    "id": 568124,
+    "original_language": "en",
+    "original_title": "Encanto",
+    "overview": "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a rolling landscape. The magic of the Encanto has blessed every child in the family with a unique gift from super strength to the power to heal—every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
+    "popularity": 1774.465,
+    "poster_path": "/assets/img/3.jpg",
+    "release_date": "2021-11-24",
+    "title": "Encanto",
+    "video": false,
+    "vote_average": 7.5,
+    "vote_count": 1000
+  }
+]
