@@ -2,11 +2,7 @@
 import Bannerslides from "@/components/slides/banner-slides";
 import BrandSlides from "@/components/slides/brand-slides";
 import RecentlyWatchedSlides from "@/components/slides/recently-watched-slides";
-import Banner from "@/components/ui/banner";
-import BrandCard from "@/components/ui/cards/brand-card";
-import { LargeSlider } from "@/components/ui/slider/LargeSlider";
 import { useTheme } from "@/contexts/ThemeContext";
-import { useContext } from "react";
 
 export default function Home() {
   const { theme, toggleTheme } = useTheme();

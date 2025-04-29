@@ -1,5 +1,4 @@
 import React from "react";
-import Info from "./info";
 import { Timer } from "lucide-react";
 
 interface InfoWithTimeProps {

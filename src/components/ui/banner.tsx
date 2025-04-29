@@ -1,5 +1,4 @@
 import Image from "next/image";
-import movies from "@/mock-data/movies.json";
 import { Info, Title, Paragraph } from "./typography";
 import { Button, ButtonOutline } from "./buttons";
 import { Bookmark, PlayCircle } from "@deemlol/next-icons";

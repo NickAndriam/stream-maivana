@@ -1,6 +1,5 @@
 import React from "react";
-import Info from "./info";
-import { Star, StarIcon } from "lucide-react";
+import { StarIcon } from "lucide-react";
 
 export default function InfoWithIcon() {
   return (

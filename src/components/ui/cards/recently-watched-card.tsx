@@ -30,8 +30,8 @@ const RecentlyWatchedCard = () => {
   );
 };
 
-const CardPlaceholder = () => {
-  return <div></div>;
-};
+// const CardPlaceholder = () => {
+//   return <div></div>;
+// };
 
 export default RecentlyWatchedCard;

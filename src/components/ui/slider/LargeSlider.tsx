@@ -41,7 +41,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
       default:
         return perViewScreen?.xs || 1;
     }
-  }, [screen]);
+  }, [screen, perViewScreen]);
 
   // Initializing the Keen Slider with the specified options
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({

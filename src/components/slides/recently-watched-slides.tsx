@@ -1,7 +1,6 @@
 import React from "react";
 import { LargeSlider } from "../ui/slider/LargeSlider";
 import RecentlyWatchedCard from "../ui/cards/recently-watched-card";
-import useScreen from "@/hooks/useScreen";
 import { Title } from "../ui/typography";
 
 export default function RecentlyWatchedSlides() {

@@ -1,10 +1,8 @@
 import React from "react";
 import { LargeSlider } from "../ui/slider/LargeSlider";
 import BrandCard from "../ui/cards/brand-card";
-import useScreen from "@/hooks/useScreen";
 
 export default function BrandSlides() {
-  const screen = useScreen();
   return (
     <LargeSlider
       mode="free"
