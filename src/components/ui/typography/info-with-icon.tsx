@@ -1,7 +1,17 @@
 import React from "react";
 import { StarIcon } from "lucide-react";
+import Placeholder from "../placeholder/placeholder";
 
-export default function InfoWithIcon() {
+interface InfoWithIconProps {
+  loaded?: boolean;
+  placeholderStyle?: string;
+}
+
+export default function InfoWithIcon(props: InfoWithIconProps) {
+  // Placeholder for loading state
+  if (!props.loaded) {
+    return <Placeholder className={`${props.placeholderStyle}`} />;
+  }
   return (
     <div className="flex items-center gap-2">
       <div className="flex justify-start items-center gap-1">

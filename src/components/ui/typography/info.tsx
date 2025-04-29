@@ -5,10 +5,16 @@ import TextPlaceholder from "../placeholder/placeholder";
 interface TitleProps {
   children?: React.ReactNode;
   className?: string;
+  placeholderStyle?: string;
+  loaded?: boolean;
 }
 const Info = (props: TitleProps) => {
-  if (!props.children) {
-    return <TextPlaceholder className={`h-5 w-40 ${props.className}`} />;
+  if (!props.loaded) {
+    return (
+      <TextPlaceholder
+        className={`${props.placeholderStyle} ${props.className}`}
+      />
+    );
   }
   return (
     <p

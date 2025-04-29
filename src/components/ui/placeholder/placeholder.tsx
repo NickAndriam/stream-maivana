@@ -7,7 +7,7 @@ interface PlaceholderProps {
 const Placeholder = ({ className }: PlaceholderProps) => {
   return (
     <div
-      className={`w-1/2 h-10 bg-secondary animate-pulse rounded-xl ${className}`}
+      className={`w-1/2 bg-secondary animate-pulse rounded-xl ${className}`}
     />
   );
 };

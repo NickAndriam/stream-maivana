@@ -11,7 +11,7 @@ export default function RecentlyWatchedSlides() {
       </Title>
       <LargeSlider
         perViewScreen={{
-          "2xl": 3.1,
+          "2xl": 4.1,
           xl: 3,
           lg: 2.5,
           md: 2,
@@ -19,6 +19,7 @@ export default function RecentlyWatchedSlides() {
           xs: 1.1,
         }}
         hideIndicators={true}
+        withArrow
       >
         {Array.from({ length: 20 }, (_, index) => (
           <RecentlyWatchedCard key={index} />

@@ -2,6 +2,7 @@
 import useScreen from "@/hooks/useScreen";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useMemo, useState } from "react";
 
 interface LargeSliderProps {
@@ -12,6 +13,7 @@ interface LargeSliderProps {
   };
   mode?: "snap" | "free" | "free-snap";
   hideIndicators?: boolean;
+  withArrow?: boolean;
 }
 
 export const LargeSlider: React.FC<LargeSliderProps> = ({
@@ -19,6 +21,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
   hideIndicators = false,
   perViewScreen,
   mode = "snap",
+  withArrow = false,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -48,7 +51,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
     loop: true,
     slides: { perView },
     mode,
-    rubberband: false,
+    rubberband: true,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
@@ -63,6 +66,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
           </div>
         ))}
       </div>
+      {/* Dot Indicators */}
       {!hideIndicators ? (
         <div className="relative my-5">
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -71,15 +75,30 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
                 key={idx}
                 onClick={() => instanceRef.current?.moveToIdx(idx)}
                 className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
-                  currentSlide === idx ? "bg-white" : "bg-white/50"
+                  currentSlide === idx ? "bg-foreground" : "bg-foreground/30"
                 }`}
               />
             ))}
           </div>
         </div>
       ) : null}
+      {/* Right Arrow */}
+      {withArrow ? (
+        <ChevronRight
+          size={40}
+          onClick={() => instanceRef.current?.next()}
+          className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
+        />
+      ) : null}
 
-      {/* Dot Indicators */}
+      {/* Left Arrow */}
+      {withArrow ? (
+        <ChevronLeft
+          size={40}
+          onClick={() => instanceRef.current?.prev()}
+          className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto  backdrop-blur-sm rounded-full"
+        />
+      ) : null}
     </div>
   );
 };

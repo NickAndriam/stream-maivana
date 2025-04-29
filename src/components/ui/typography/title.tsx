@@ -5,12 +5,14 @@ interface TitleProps {
   children?: React.ReactNode;
   className?: string;
   heading?: string;
+  loaded?: boolean;
+  placeholderStyle?: string;
 }
 
 const Title = ({ heading = "h1", ...props }: TitleProps) => {
   // Placeholder for loading state
-  if (!props.children) {
-    return <TextPlaceholder />;
+  if (!props.loaded) {
+    return <TextPlaceholder className={`${props.placeholderStyle}`} />;
   }
 
   const headingStyles: Record<string, string> = {
