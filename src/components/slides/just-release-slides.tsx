@@ -27,7 +27,7 @@ const JustReleaseSlides = () => {
         withArrow
       >
         {Array.from({ length: 20 }, (_, index) => (
-          <JustReleaseCard />
+          <JustReleaseCard key={index} />
         ))}
       </LargeSlider>
     </div>
