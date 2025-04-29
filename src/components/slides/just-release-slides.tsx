@@ -1,9 +1,9 @@
 import React from "react";
-import { LargeSlider } from "../ui/slider/LargeSlider";
-import RecentlyWatchedCard from "../ui/cards/recently-watched-card";
 import { Title } from "../ui/typography";
+import { LargeSlider } from "../ui/slider/LargeSlider";
+import JustReleaseCard from "../ui/cards/just-release-card";
 
-export default function RecentlyWatchedSlides() {
+const JustReleaseSlides = () => {
   return (
     <div className="flex flex-col gap-5">
       <Title
@@ -12,7 +12,7 @@ export default function RecentlyWatchedSlides() {
         placeholderStyle="w-40 h-10 ml-2"
         className="ml-2"
       >
-        Recently Watched
+        Just Released
       </Title>
       <LargeSlider
         perViewScreen={{
@@ -21,15 +21,17 @@ export default function RecentlyWatchedSlides() {
           lg: 2.5,
           md: 2,
           sm: 1.5,
-          xs: 1.1,
+          xs: 1.5,
         }}
         hideIndicators={true}
         withArrow
       >
         {Array.from({ length: 20 }, (_, index) => (
-          <RecentlyWatchedCard key={index} />
+          <JustReleaseCard />
         ))}
       </LargeSlider>
     </div>
   );
-}
+};
+
+export default JustReleaseSlides;
