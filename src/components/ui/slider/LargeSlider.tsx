@@ -61,7 +61,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
     <div className="relative w-full h-auto">
       <div ref={sliderRef} className="keen-slider h-full w-full">
         {children.map((child, index) => (
-          <div className="keen-slider__slide" key={index}>
+          <div className="keen-slider__slide " key={index}>
             {child}
           </div>
         ))}
@@ -75,7 +75,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
                 key={idx}
                 onClick={() => instanceRef.current?.moveToIdx(idx)}
                 className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
-                  currentSlide === idx ? "bg-foreground" : "bg-foreground/30"
+                  currentSlide === idx ? "bg-foreground/50" : "bg-foreground/10"
                 }`}
               />
             ))}
@@ -87,7 +87,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
         <ChevronRight
           size={40}
           onClick={() => instanceRef.current?.next()}
-          className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
+          className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
         />
       ) : null}
 
@@ -96,7 +96,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
         <ChevronLeft
           size={40}
           onClick={() => instanceRef.current?.prev()}
-          className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto  backdrop-blur-sm rounded-full"
+          className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto  backdrop-blur-sm rounded-full"
         />
       ) : null}
     </div>
