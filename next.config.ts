@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  eslint: {
+    dirs: ["src"], // Only run ESLint on the "pages" and "components" directories during production builds (next build)
+  },
 };
 
 export default nextConfig;
