@@ -3,7 +3,7 @@ import { Title } from "../ui/typography";
 import { LargeSlider } from "../ui/slider/LargeSlider";
 import CommonCard from "../ui/cards/common-card";
 
-const JustReleaseSlides = () => {
+const SeriesSlides = () => {
   return (
     <div className="flex flex-col gap-5">
       <Title
@@ -12,7 +12,7 @@ const JustReleaseSlides = () => {
         placeholderStyle="w-40 h-10 ml-2"
         className="ml-2"
       >
-        Just Released
+        Series
       </Title>
       <LargeSlider
         perViewScreen={{
@@ -27,11 +27,16 @@ const JustReleaseSlides = () => {
         withArrow
       >
         {Array.from({ length: 20 }, (_, index) => (
-          <CommonCard key={index} />
+          <CommonCard
+            key={index}
+            height="h-70"
+            image="/assets/img/posters/16.jpg"
+            title="Sonic 3"
+          />
         ))}
       </LargeSlider>
     </div>
   );
 };
 
-export default JustReleaseSlides;
+export default SeriesSlides;
