@@ -6,7 +6,7 @@ import { Bookmark, PlayCircle } from "@deemlol/next-icons";
 const Banner = () => {
   const loaded = true; // Simulating the loaded state
   return (
-    <div className="relative h-[60vh] md:h-[50vh] lg:h-[60vh] min-w-[300px]">
+    <div className="relative h-[60vh] md:h-[50vh] lg:h-[60vh]">
       <Image
         src="/assets/img/posters/3.jpg"
         alt="banner image"
@@ -30,7 +30,7 @@ const Banner = () => {
         </Info>
         <Paragraph
           loaded={loaded}
-          className="my-5 lg:w-2/3 text-white"
+          className="my-5 lg:w-2/3 text-white "
           placeholderStyle="w-full h-20"
         >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
