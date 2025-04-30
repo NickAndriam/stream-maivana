@@ -2,7 +2,7 @@ import React from "react";
 import { InfoWithIcon, Title } from "../typography";
 import Image from "next/image";
 import PgText from "../typography/pg-text";
-import { Film, InfoIcon } from "lucide-react";
+import { Film } from "lucide-react";
 
 interface PopularCardProps {
   className?: string;
