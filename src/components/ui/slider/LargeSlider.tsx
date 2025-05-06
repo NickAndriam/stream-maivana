@@ -52,6 +52,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
     slides: { perView },
     mode,
     rubberband: true,
+    renderMode: "performance",
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
