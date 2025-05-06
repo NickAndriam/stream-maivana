@@ -14,7 +14,7 @@ export default function Home() {
   const { theme, toggleTheme } = useTheme();
   return (
     <main className="flex flex-col gap-10">
-      <p
+      <div
         onClick={toggleTheme}
         className="bg-primary rounded-full absolute top-0 right-5 z-50 m-4 p-2"
       >
@@ -23,7 +23,7 @@ export default function Home() {
         ) : (
           <Moon className="text-white" />
         )}
-      </p>
+      </div>
       <Bannerslides />
       <section className="flex flex-col gap-12 xl:px-40 lg:px-10 md:px-10 sm:px-10 xs:px-5">
         <BrandSlides />
