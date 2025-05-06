@@ -8,16 +8,23 @@ export default function FeaturedSlides() {
   return (
     <div className="relative flex flex-col gap-5 my-10">
       <div className="ml-3 z-10 flex flex-col gap-2">
-        <Title loaded heading="h3" placeholderStyle="w-40 h-10 ml-2">
+        <Title
+          loaded
+          heading="h3"
+          placeholderStyle="w-40 h-10 ml-2"
+          className="text-white"
+        >
           Featured in Film Maivana
         </Title>
-        <Paragraph loaded>Best featured for you today</Paragraph>
+        <Paragraph loaded className="text-white">
+          Best featured for you today
+        </Paragraph>
       </div>
 
       <Image
         src="/assets/img/posters/4.jpg"
         alt="featured"
-        fill
+        layout="fill"
         style={{ objectFit: "cover" }}
         className="rounded-lg blur-2xl"
       />
