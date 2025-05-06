@@ -17,7 +17,7 @@ const BrandCard = (props: BrandCardProps) => {
           src="/assets/logo/netflix.png"
           alt="brand image"
           layout="fill"
-          className="object-contain"
+          style={{ objectFit: "contain" }}
         />
       </div>
     </div>

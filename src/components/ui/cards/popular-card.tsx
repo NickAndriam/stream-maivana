@@ -1,4 +1,3 @@
-import React from "react";
 import { InfoWithIcon, Title } from "../typography";
 import Image from "next/image";
 import PgText from "../typography/pg-text";
