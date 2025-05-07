@@ -3,17 +3,18 @@ import useScreen from "@/hooks/useScreen";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
 interface LargeSliderProps {
   children: React.ReactNode[];
-  perView?: number;
   perViewScreen?: {
     [key: string]: number;
   };
   mode?: "snap" | "free" | "free-snap";
   hideIndicators?: boolean;
   withArrow?: boolean;
+  placeholderComponent?: React.ReactNode;
+  placeholderSlideCount?: number;
 }
 
 export const LargeSlider: React.FC<LargeSliderProps> = ({
@@ -22,13 +23,15 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
   perViewScreen,
   mode = "snap",
   withArrow = false,
+  placeholderComponent,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isReady, setIsReady] = useState(false);
 
-  // Calling the useScreen hook to get the current screen size
+  // Get the current screen size using the useScreen hook
   const screen = useScreen();
 
-  // Settings the perView based on the screen size
+  // Calculate the number of slides per view based on the screen size
   const perView = useMemo(() => {
     switch (screen) {
       case "2xl":
@@ -46,7 +49,14 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
     }
   }, [screen, perViewScreen]);
 
-  // Initializing the Keen Slider with the specified options
+  // Ensure the slider is ready only after perView is calculated
+  useEffect(() => {
+    if (perView) {
+      setIsReady(true);
+    }
+  }, [perView]);
+
+  // Initialize the Keen Slider with the specified options
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: { perView },
@@ -58,17 +68,32 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
     },
   });
 
+  // Show a loading placeholder until the slider is ready
+  if (!isReady) {
+    return (
+      <div className="relative w-full h-auto">
+        <div className="keen-slider h-full w-full">
+          {Array.from({ length: Math.round(perView) }, (_, index) => (
+            <div className="keen-slider__slide animate-pulse" key={index}>
+              {placeholderComponent}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full h-auto">
       <div ref={sliderRef} className="keen-slider h-full w-full">
         {children.map((child, index) => (
-          <div className="keen-slider__slide " key={index}>
+          <div className="keen-slider__slide" key={index}>
             {child}
           </div>
         ))}
       </div>
       {/* Dot Indicators */}
-      {!hideIndicators ? (
+      {!hideIndicators && (
         <div className="relative my-5">
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             {children.map((_, idx) => (
@@ -82,24 +107,22 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
             ))}
           </div>
         </div>
-      ) : null}
-      {/* Right Arrow */}
-      {withArrow ? (
-        <ChevronRight
-          size={40}
-          onClick={() => instanceRef.current?.next()}
-          className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
-        />
-      ) : null}
-
-      {/* Left Arrow */}
-      {withArrow ? (
-        <ChevronLeft
-          size={40}
-          onClick={() => instanceRef.current?.prev()}
-          className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto  backdrop-blur-sm rounded-full"
-        />
-      ) : null}
+      )}
+      {/* Navigation Arrows */}
+      {withArrow && (
+        <>
+          <ChevronLeft
+            size={40}
+            onClick={() => instanceRef.current?.prev()}
+            className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
+          />
+          <ChevronRight
+            size={40}
+            onClick={() => instanceRef.current?.next()}
+            className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
+          />
+        </>
+      )}
     </div>
   );
 };
