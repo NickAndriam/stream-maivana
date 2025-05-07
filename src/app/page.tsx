@@ -25,7 +25,7 @@ export default function Home() {
         )}
       </div>
       <Bannerslides />
-      <section className="flex flex-col gap-12 xl:px-40 lg:px-10 md:px-10 sm:px-10 xs:px-5">
+      <section className="flex flex-col gap-12 xl:px-60 lg:px-20 md:px-10 sm:px-5 xs:px-5 px-2">
         <BrandSlides />
         <RecentlyWatchedSlides />
         <JustReleaseSlides />
