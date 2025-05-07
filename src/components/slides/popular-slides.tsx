@@ -11,7 +11,7 @@ export default function PopularSlides() {
       </Title>
       <LargeSlider
         hideIndicators
-        perViewScreen={{ xs: 1, sm: 1, md: 1.5, lg: 2.5, xl: 2.5, "2xl": 2.5 }}
+        perViewScreen={{ xs: 1, sm: 1, md: 1.5, lg: 2.5, xl: 2.5, "2xl": 3 }}
       >
         {Array.from({ length: 10 }, (_, index) => (
           <PopularCard key={index} index={index + 1} />

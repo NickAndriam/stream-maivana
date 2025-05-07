@@ -1,6 +1,8 @@
 import React from "react";
 import { LargeSlider } from "../ui/slider/LargeSlider";
-import RecentlyWatchedCard from "../ui/cards/recently-watched-card";
+import RecentlyWatchedCard, {
+  RecentlyWatchedCardPlaceholder,
+} from "../ui/cards/recently-watched-card";
 import { Title } from "../ui/typography";
 
 export default function RecentlyWatchedSlides() {
@@ -25,6 +27,8 @@ export default function RecentlyWatchedSlides() {
         }}
         hideIndicators={true}
         withArrow
+        placeholderComponent={<RecentlyWatchedCardPlaceholder />}
+        placeholderSlideCount={3}
       >
         {Array.from({ length: 20 }, (_, index) => (
           <RecentlyWatchedCard key={index} />
