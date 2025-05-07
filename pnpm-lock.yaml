@@ -11,6 +11,9 @@ importers:
       '@deemlol/next-icons':
         specifier: ^0.1.9
         version: 0.1.9(react@19.1.0)
+      '@uidotdev/usehooks':
+        specifier: ^2.4.1
+        version: 2.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -569,6 +572,13 @@ packages:
   '@typescript-eslint/visitor-keys@8.30.1':
     resolution: {integrity: sha512-aEhgas7aJ6vZnNFC7K4/vMGDGyOiqWcYZPpIWrTKuTAlsvDNKy2GFDqh9smL+iq069ZvR0YzEeq0B8NJlLzjFA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@uidotdev/usehooks@2.4.1':
+    resolution: {integrity: sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
 
   '@unrs/resolver-binding-darwin-arm64@1.5.0':
     resolution: {integrity: sha512-YmocNlEcX/AgJv8gI41bhjMOTcKcea4D2nRIbZj+MhRtSH5+vEU8r/pFuTuoF+JjVplLsBueU+CILfBPVISyGQ==}
@@ -2254,6 +2264,11 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.30.1
       eslint-visitor-keys: 4.2.0
+
+  '@uidotdev/usehooks@2.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@unrs/resolver-binding-darwin-arm64@1.5.0':
     optional: true
