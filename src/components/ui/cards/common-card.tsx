@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { InfoWithIcon, Title } from "../typography";
+import Placeholder from "../placeholder/placeholder";
 
 interface JustReleaseCardProps {
   title?: string;
@@ -44,6 +45,25 @@ const CommonCard = ({
           genres={genres}
           rating={rating}
         />
+      </div>
+    </div>
+  );
+};
+
+export const CommonCardPlaceholder = () => {
+  return (
+    <div className="relative mx-2 rounded-lg overflow-hidden">
+      <div
+        className={`relative bg-card rounded-xl h-90 overflow-hidden flex animate-pulse`}
+      >
+        <div className="bg-gray-500 w-full h-full" />
+      </div>
+      <div
+        className="absolute bottom-0 left-0 w-full h-auto bg-background/5 bg-gradient-to-t from-background/60 to-background/40 backdrop-blur-sm p-4
+      flex flex-col items-start gap-2"
+      >
+        <Placeholder className="w-40 h-10" />
+        <Placeholder className="h-6" />
       </div>
     </div>
   );

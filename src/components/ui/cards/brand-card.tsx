@@ -24,4 +24,10 @@ const BrandCard = (props: BrandCardProps) => {
   );
 };
 
+export const BrandCardPlaceholder = () => {
+  return (
+    <Placeholder className="h-18 rounded-xl flex items-center justify-center mx-2 bg-gray-500 border-[0.5px] border-black/5 animate-pulse" />
+  );
+};
+
 export default BrandCard;
