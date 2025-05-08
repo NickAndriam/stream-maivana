@@ -4,9 +4,8 @@ export default function useScreen() {
   const size = useWindowSize();
 
   // Create a default screen size like lg, md, sm, xs
-  const screenSize = React.useMemo(() => {
+  const screenSize: string = React.useMemo(() => {
     const screenWidth = size.width || 0;
-    console.log("Size", size);
     if (screenWidth >= 1536) {
       return "2xl"; // Extra large screens
     } else if (screenWidth >= 1280 && screenWidth < 1536) {
