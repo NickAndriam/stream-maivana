@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className={`${inter.className} antialiased relative`}>
+        <body className={`${inter.className} antialiased relative mb-20`}>
           {children}
           <BottomNavbar />
         </body>
