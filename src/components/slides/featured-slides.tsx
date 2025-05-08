@@ -1,7 +1,7 @@
 import React from "react";
 import { Paragraph, Title } from "../ui/typography";
 import { LargeSlider } from "../ui/slider/LargeSlider";
-import CommonCard from "../ui/cards/common-card";
+import CommonCard, { CommonCardPlaceholder } from "../ui/cards/common-card";
 import Image from "next/image";
 
 export default function FeaturedSlides() {
@@ -26,7 +26,7 @@ export default function FeaturedSlides() {
         alt="featured"
         layout="fill"
         style={{ objectFit: "cover" }}
-        className="rounded-lg blur-2xl"
+        className="rounded-lg blur-2xl animate-in fade-in duration-1000"
       />
       <LargeSlider
         perViewScreen={{
@@ -38,6 +38,7 @@ export default function FeaturedSlides() {
           xs: 1.3,
         }}
         withArrow
+        placeholderComponent={<CommonCardPlaceholder />}
       >
         {Array.from({ length: 10 }, (_, index) => (
           <CommonCard

@@ -26,7 +26,9 @@ const Title = ({ heading = "h1", ...props }: TitleProps) => {
   const headingStyle = headingStyles[heading] || headingStyles.default;
 
   return (
-    <h2 className={`${headingStyle} font-bold ${props.className}`}>
+    <h2
+      className={`${headingStyle} font-bold ${props.className} animate-in fade-in duration-1000`}
+    >
       {props.children}
     </h2>
   );

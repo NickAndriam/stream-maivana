@@ -1,7 +1,7 @@
 import React from "react";
 import { Title } from "../ui/typography";
 import { LargeSlider } from "../ui/slider/LargeSlider";
-import CommonCard from "../ui/cards/common-card";
+import CommonCard, { CommonCardPlaceholder } from "../ui/cards/common-card";
 
 const MoviesSlides = () => {
   return (
@@ -25,6 +25,7 @@ const MoviesSlides = () => {
         }}
         hideIndicators={true}
         withArrow
+        placeholderComponent={<CommonCardPlaceholder />}
       >
         {Array.from({ length: 20 }, (_, index) => (
           <CommonCard

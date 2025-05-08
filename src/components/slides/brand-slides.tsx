@@ -12,7 +12,7 @@ export default function BrandSlides() {
       placeholderSlideCount={4}
     >
       {Array.from({ length: 20 }, (_, index) => (
-        <BrandCard loaded key={index} />
+        <BrandCard key={index} />
       ))}
     </LargeSlider>
   );

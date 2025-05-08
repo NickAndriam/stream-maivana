@@ -1,6 +1,6 @@
 import React from "react";
 import { LargeSlider } from "../ui/slider/LargeSlider";
-import PopularCard from "../ui/cards/popular-card";
+import PopularCard, { PopularCardPlaceholder } from "../ui/cards/popular-card";
 import { Title } from "../ui/typography";
 
 export default function PopularSlides() {
@@ -12,6 +12,7 @@ export default function PopularSlides() {
       <LargeSlider
         hideIndicators
         perViewScreen={{ xs: 1, sm: 1, md: 1.5, lg: 2.5, xl: 2.5, "2xl": 3 }}
+        placeholderComponent={<PopularCardPlaceholder />}
       >
         {Array.from({ length: 10 }, (_, index) => (
           <PopularCard key={index} index={index + 1} />

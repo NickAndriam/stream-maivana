@@ -12,6 +12,7 @@ const RecentlyWatchedCard = () => {
           alt="banner image"
           fill
           style={{ objectFit: "cover" }}
+          className="animate-in fade-in duration-1000"
         />
       </div>
       <div className="p-2 w-2/3 flex flex-col justify-between">

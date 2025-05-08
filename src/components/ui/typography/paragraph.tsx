@@ -25,7 +25,7 @@ const Paragraph = (props: {
   if (!props.loaded) {
     return (
       <TextPlaceholder
-        className={`${props.className} ${props.placeholderStyle}`}
+        className={`${props.className} ${props.placeholderStyle} animate-in fade-in duration-1000`}
       />
     );
   }

@@ -27,12 +27,11 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isReady, setIsReady] = useState(false);
-
   // Get the current screen size using the useScreen hook
-  const screen = useScreen();
+  const screen: string = useScreen();
 
   // Calculate the number of slides per view based on the screen size
-  const perView = useMemo(() => {
+  const perView: number = useMemo(() => {
     switch (screen) {
       case "2xl":
         return perViewScreen?.["2xl"] || 6;
@@ -52,7 +51,9 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
   // Ensure the slider is ready only after perView is calculated
   useEffect(() => {
     if (perView) {
-      setIsReady(true);
+      setTimeout(() => {
+        setIsReady(true);
+      }, 500);
     }
   }, [perView]);
 
@@ -68,12 +69,14 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
     },
   });
 
+  const countPerView = Math.round(perView);
+
   // Show a loading placeholder until the slider is ready
   if (!isReady) {
     return (
       <div className="relative w-full h-auto">
         <div className="keen-slider h-full w-full">
-          {Array.from({ length: Math.round(perView) }, (_, index) => (
+          {Array.from({ length: countPerView }, (_, index) => (
             <div className="keen-slider__slide animate-pulse" key={index}>
               {placeholderComponent}
             </div>

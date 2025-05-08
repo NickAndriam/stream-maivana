@@ -26,6 +26,7 @@ const CommonCard = ({
         } overflow-hidden flex`}
       >
         <Image
+          className="animate-in fade-in duration-1000"
           src={image || "/assets/img/posters/12.jpg"}
           alt={title || "Just Release"}
           fill

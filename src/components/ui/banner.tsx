@@ -15,7 +15,7 @@ const Banner = () => {
         fill
         style={{ objectFit: "cover" }}
       />
-      <section className="absolute bottom-0 left-0 w-full h-auto backdrop-blur-xs bg-gradient-to-t from-black to-black/10 py-5 xl:px-60 lg:px-20 md:px-10 sm:px-5 xs:px-5 px-2">
+      <section className="absolute bottom-0 left-0 w-full h-auto backdrop-blur-xs bg-gradient-to-t from-black to-black/10 py-5 xl:px-40 lg:px-20 md:px-10 sm:px-5 xs:px-5 px-2">
         <Title
           loaded={loaded}
           className="text-white"
@@ -57,7 +57,7 @@ const Banner = () => {
 export const BannerPlaceholder = () => {
   return (
     <div className="relative h-[60vh] md:h-[50vh] lg:h-[60vh] bg-background w-[100vw] animate-pulse">
-      <div className="absolute bottom-0 left-0 w-full h-auto py-5 xl:px-60 lg:px-20 md:px-10 sm:px-5 xs:px-5 px-2 flex flex-col gap-4">
+      <div className="absolute bottom-0 left-0 w-full h-auto py-5 xl:px-40 lg:px-20 md:px-10 sm:px-5 xs:px-5 px-2 flex flex-col gap-4">
         <Placeholder className="w-40 h-10 my-2" />
         <Placeholder className="h-8 w-30" />
         <Placeholder className="w-full h-20" />
