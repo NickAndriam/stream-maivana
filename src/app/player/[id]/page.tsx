@@ -9,8 +9,8 @@ interface PlayerPageProps {
   params: { id: string };
 }
 
-export default async function Page({ params }: PlayerPageProps) {
-  const { id } = await params;
+export default function Page({ params }: PlayerPageProps) {
+  const { id } = params;
   console.log(id); // Use `id` instead of `slug` to match the dynamic route
   return (
     <main>
