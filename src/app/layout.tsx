@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import BottomNavbar from "@/components/layout/bottom-navbar";
+import ElementRefProvider from "@/contexts/ElementRefContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className={`${inter.className} antialiased relative mb-20`}>
-          {children}
-          <BottomNavbar />
-        </body>
+        <ElementRefProvider>
+          <body className={`${inter.className} antialiased relative mb-20`}>
+            {children}
+            <BottomNavbar />
+          </body>
+        </ElementRefProvider>
       </ThemeProvider>
     </html>
   );
