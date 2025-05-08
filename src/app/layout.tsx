@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import BottomNavbar from "@/components/layout/bottom-navbar";
 import ElementRefProvider from "@/contexts/ElementRefContext";
+import ThemeButton from "@/components/layout/theme-button";
+import BackButton from "@/components/layout/back-button";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider>
         <ElementRefProvider>
-          <body className={`${inter.className} antialiased relative mb-20`}>
+          <body className={`${inter.className} antialiased relative pb-20`}>
+            <ThemeButton />
+            <BackButton />
             {children}
             <BottomNavbar />
           </body>
