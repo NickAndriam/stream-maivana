@@ -15,6 +15,7 @@ interface LargeSliderProps {
   withArrow?: boolean;
   placeholderComponent?: React.ReactNode;
   placeholderSlideCount?: number;
+  cardSpacing?: number;
 }
 
 export const LargeSlider: React.FC<LargeSliderProps> = ({
@@ -24,6 +25,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
   mode = "snap",
   withArrow = false,
   placeholderComponent,
+  cardSpacing = 5,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isReady, setIsReady] = useState(false);
@@ -60,10 +62,11 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
   // Initialize the Keen Slider with the specified options
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    slides: { perView },
+    slides: { perView, spacing: cardSpacing },
     mode,
     rubberband: true,
     renderMode: "performance",
+
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
@@ -74,7 +77,7 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
   // Show a loading placeholder until the slider is ready
   if (!isReady) {
     return (
-      <div className="relative w-full h-auto">
+      <div className="relative w-full h-auto animate-in fade-in duration-1000">
         <div className="keen-slider h-full w-full">
           {Array.from({ length: countPerView }, (_, index) => (
             <div className="keen-slider__slide animate-pulse" key={index}>
@@ -117,12 +120,12 @@ export const LargeSlider: React.FC<LargeSliderProps> = ({
           <ChevronLeft
             size={40}
             onClick={() => instanceRef.current?.prev()}
-            className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
+            className="cursor-pointer absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
           />
           <ChevronRight
             size={40}
             onClick={() => instanceRef.current?.next()}
-            className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
+            className="cursor-pointer absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-foreground/10 hover:bg-foreground/20 text-foreground/70 p-2 h-auto backdrop-blur-sm rounded-full"
           />
         </>
       )}

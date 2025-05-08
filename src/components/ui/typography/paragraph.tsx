@@ -1,5 +1,4 @@
 import React from "react";
-import TextPlaceholder from "../placeholder/placeholder";
 
 const Paragraph = (props: {
   children?: React.ReactNode;
@@ -22,13 +21,6 @@ const Paragraph = (props: {
   const paragraphStyle = props.size
     ? paragraphStyles[props.size]
     : paragraphStyles.default;
-  if (!props.loaded) {
-    return (
-      <TextPlaceholder
-        className={`${props.className} ${props.placeholderStyle} animate-in fade-in duration-1000`}
-      />
-    );
-  }
   return (
     <p className={`${props.className} ${paragraphStyle}`}>{props.children}</p>
   );

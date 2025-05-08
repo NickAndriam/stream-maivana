@@ -1,5 +1,4 @@
 import React from "react";
-import TextPlaceholder from "../placeholder/placeholder";
 
 interface TitleProps {
   children?: React.ReactNode;
@@ -10,11 +9,6 @@ interface TitleProps {
 }
 
 const Title = ({ heading = "h1", ...props }: TitleProps) => {
-  // Placeholder for loading state
-  if (!props.loaded) {
-    return <TextPlaceholder className={`${props.placeholderStyle}`} />;
-  }
-
   const headingStyles: Record<string, string> = {
     h1: "text-3xl md:text-4xl lg:text-5xl",
     h2: "text-2xl md:text-3xl lg:text-4xl",

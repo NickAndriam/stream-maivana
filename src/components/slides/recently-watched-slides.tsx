@@ -1,11 +1,16 @@
+"use client";
 import React from "react";
 import { LargeSlider } from "../ui/slider/LargeSlider";
 import RecentlyWatchedCard, {
   RecentlyWatchedCardPlaceholder,
 } from "../ui/cards/recently-watched-card";
 import { Title } from "../ui/typography";
+import { useRouter } from "next/navigation";
 
 export default function RecentlyWatchedSlides() {
+  const router = useRouter();
+
+  console.log("Router", router);
   return (
     <div className="flex flex-col gap-5">
       <Title
@@ -31,7 +36,10 @@ export default function RecentlyWatchedSlides() {
         placeholderSlideCount={3}
       >
         {Array.from({ length: 20 }, (_, index) => (
-          <RecentlyWatchedCard key={index} />
+          <RecentlyWatchedCard
+            key={index}
+            onClick={() => router?.push("/player/1")}
+          />
         ))}
       </LargeSlider>
     </div>

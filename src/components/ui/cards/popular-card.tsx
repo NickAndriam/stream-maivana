@@ -11,7 +11,6 @@ interface PopularCardProps {
 }
 
 export default function PopularCard(props: PopularCardProps) {
-  console.log(props.index);
   return (
     <div className="flex items-center justify-center gap-6 h-full">
       {!props.hideNumber ? (

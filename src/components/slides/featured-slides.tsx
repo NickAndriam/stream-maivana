@@ -24,7 +24,7 @@ export default function FeaturedSlides() {
       <Image
         src="/assets/img/posters/4.jpg"
         alt="featured"
-        layout="fill"
+        fill
         style={{ objectFit: "cover" }}
         className="rounded-lg blur-2xl animate-in fade-in duration-1000"
       />

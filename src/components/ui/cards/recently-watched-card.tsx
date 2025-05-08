@@ -3,9 +3,14 @@ import React from "react";
 import { InfoWithIcon, InfoWithTime, Paragraph, Title } from "../typography";
 import Placeholder from "../placeholder/placeholder";
 
-const RecentlyWatchedCard = () => {
+const RecentlyWatchedCard = ({
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className="bg-card rounded-xl mx-2 h-50 overflow-hidden flex border-4 border-primary">
+    <div
+      className="bg-card rounded-xl mx-2 h-50 overflow-hidden flex border-4 border-primary cursor-pointer hover:opacity-60"
+      {...props}
+    >
       <div className="relative w-1/2 h-full overflow-hidden ">
         <Image
           src="/assets/img/posters/1.jpg"
@@ -31,8 +36,8 @@ const RecentlyWatchedCard = () => {
           </Paragraph>
         </div>
         <div className="flex flex-col gap-1 ">
-          <InfoWithTime loaded time="50mn 34s" placeholderStyle="h-6 w-30" />
-          <InfoWithIcon loaded placeholderStyle="h-6" />
+          <InfoWithTime time="50mn 34s" placeholderStyle="h-6 w-30" />
+          <InfoWithIcon placeholderStyle="h-6" />
         </div>
       </div>
     </div>
